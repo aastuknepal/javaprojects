@@ -1,0 +1,391 @@
+Day1
+java intro:
+-multipurpose programming language
+-object oriented programmig programming language
+-intoduced by sun microsystem now acquired by oracle.
+-write once run anywhere(WORE)
+-instead of machine code it produce bytecode then only lead to machine code.
+-compile language
+JDK-> java development kit
+
+Day2
+eclipse IDE
+array-> group of similar daatypes
+multi-dimensional array
+
+Day3
+class and object -(encapsulation, inheritance, ppolymorphism, abstraction)
+class - blueprint of  an object
+object - instance of a class [also have property(variables) and behaviour(methods/functions)]
+-java is case sensitive.
+-class name should start with upper case.
+-class name and file name shoukd be same.
+
+
+class car{
+string color;   (property)
+string model;
+void drive(){}  (behaviour)
+void brake(){}
+car tesla = new car();      [syntax: classname objectname = new classname();]
+tesla.color="black";
+tesla.model="3";
+car ionic = new car();
+ionic.color = "white";
+ionic.model = "hyper car";
+ionic.drive(); (method calling) [syntax: objectname.behaviuor();]
+
+Day4
+OOP features:    [parent]  ---->  [child]
+-inheritance
+class parent
+{ 
+int:5
+}
+class child extends parent
+{
+}
+
+types of inheritance:
+1)multilevel inheritance;
+1:1 inheritance.
+[grand parent] ------> [parent] ------> [child]
+
+-multipal inheritance is not supported by java.
+2:1 inheritance
+           [child]
+    ^                  ^
+    |                  |
+    |                  |
+                     
+ [parent1]         [parent2]
+
+
+
+
+from multiple parents to single child.
+
+Day5
+packeges-->src--->new packages
+
+project naming format:
+reverse domain name e.g:com.buddha
+
+access modifier
+-private:only accessible inside the class
+-public:accessible to any claass
+-protected:within the packages and child class
+-default:within the packagrs
+
+2)encapsulation
+-process of wrapping/ to make capsule
+-wrapping of variables / methods in class
+-it is use to hide data using access modifier like private.
+
+
+public class car{
+private int cc;
+public int get(cc);{
+return this.ccc;
+}
+public void setcc(intcc){
+this.cc:cc;
+}
+}
+car car= new car();
+car.setcc(100);
+systemout(car.get(cc);
+
+3)polymorphism
+4)abstraction
+
+jTable, Jtree, dialogue, file chooser, tool bar, tool kit
+
+
+
+
+
+lab3
+package Swing;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.*;
+
+public class Save implements ActionListener, MouseListener {
+	JTextField t1;
+	JTextField t2;
+	JButton sum;
+	JFrame frame;
+	JPanel panel;
+	JLabel label;
+
+	public Save() {
+
+		frame = new JFrame();
+		frame.setSize(700, 700);
+		panel = new JPanel();
+
+		panel.setLayout(new GridBagLayout());
+		GridBagConstraints g = new GridBagConstraints();
+
+		t1 = new JTextField("");
+		t2 = new JTextField("");
+		sum = new JButton("sum");
+		label = new JLabel("The sum is ");
+
+		sum.addActionListener(this);
+		sum.addMouseListener(this);
+
+		g.gridx = 0;
+		g.gridy = 0;
+		g.ipadx = 150;
+		g.insets.set(5, 5, 5, 5);
+		panel.add(t1, g);
+
+		g.gridx = 0;
+		g.gridy = 1;
+		panel.add(t2, g);
+
+		g.gridx = 0;
+		g.gridy = 2;
+		panel.add(t2, g);
+
+		g.gridx = 0;
+		g.gridy = 3;
+		panel.add(sum, g);
+
+		g.gridx = 0;
+		g.gridy = 4;
+		panel.add(label, g);
+
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+
+		int n1 = Integer.parseInt(t1.getText());
+		int n2 = Integer.parseInt(t2.getText());
+		int sum = n1 + n2;
+		label.setText("sum is " + sum);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("mouse entered");
+
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}
+8:32 AM
+Tsemmey
+Lama Ringzin Tsemmey
+package Swing;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.*;
+
+public class Save implements ActionListener, MouseListener,KeyListener,WindowListener {
+	JTextField t1;
+	JTextField t2;
+	JButton sum;
+	JFrame frame;
+	JPanel panel;
+	JLabel label;
+
+	public Save() {
+
+		frame = new JFrame();
+		frame.addWindowListener(this);
+		frame.setSize(700, 700);
+		panel = new JPanel();
+
+		panel.setLayout(new GridBagLayout());
+		GridBagConstraints g = new GridBagConstraints();
+
+		t1 = new JTextField("");
+		t1.addKeyListener(this);
+		t2 = new JTextField("");
+		sum = new JButton("sum");
+		label = new JLabel("The sum is ");
+
+		sum.addActionListener(this);
+		sum.addMouseListener(this);
+
+		g.gridx = 0;
+		g.gridy = 0;
+		g.ipadx = 150;
+		g.insets.set(5, 5, 5, 5);
+		panel.add(t1, g);
+
+		g.gridx = 0;
+		g.gridy = 1;
+		panel.add(t2, g);
+
+		g.gridx = 0;
+		g.gridy = 2;
+		panel.add(t2, g);
+
+		g.gridx = 0;
+		g.gridy = 3;
+		panel.add(sum, g);
+
+		g.gridx = 0;
+		g.gridy = 4;
+		panel.add(label, g);
+
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+
+		int n1 = Integer.parseInt(t1.getText());
+		int n2 = Integer.parseInt(t2.getText());
+		int sum = n1 + n2;
+		label.setText("sum is " + sum);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("mouse entered");
+
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("mouse clicked");
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("mouse pressed");
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("mouse exited");
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("key pressed");
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("Window closed");
+
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("Window closed");
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+}
+
+
+
+

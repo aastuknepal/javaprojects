@@ -1,0 +1,5 @@
+package javamailapi;
+
+public class SendEmail {
+
+}

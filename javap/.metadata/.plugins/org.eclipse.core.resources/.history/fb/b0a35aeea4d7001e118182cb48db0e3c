@@ -1,0 +1,16 @@
+package url;
+
+public class Snippet {
+	mport javanet, *;
+	public clous URLDemo
+	public stafic void main (Sfring angs [J) S
+	try?
+	URL un= neo URL"https://pooo.jowatpoint.com//java-tu-");
+	system out printin ("Protocol'" + urt getfrotocoll);;
+	("Host Name'"+ url get Host U);
+	(" File Name:" + url get File()) ,
+	catch (Exception e)
+	System: out printin (e) ;
+	MMM
+}
+
